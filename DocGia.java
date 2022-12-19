@@ -6,20 +6,24 @@ import java.util.Objects;
 public class DocGia {
 	private int maThe;
 	private String hoTen;
-	private Date ngayCap;
-	private Date ngayHetHan;
+	private String ngayCap;
+	private String ngayHetHan;
 	private String diaChi;
 	private int CMT;
-	private int maSach;
-	
-	public int getMaSach() {
-		return maSach;
-	}
-	public void setMaSach(int maSach) {
-		this.maSach = maSach;
+
+	public DocGia(int maThe, String hoTen, String ngayCap, String ngayHetHan, String diaChi, int cMT) {
+		this.maThe = maThe;
+		this.hoTen = hoTen;
+		this.ngayCap = ngayCap;
+		this.ngayHetHan = ngayHetHan;
+		this.diaChi = diaChi;
+		CMT = cMT;
 	}
 	public int hashCode_maDocGia() {
 		return Objects.hash(maThe);
+	}
+	public int getMaThe() {
+		return hashCode_maDocGia();
 	}
 	public void setMaThe(int maThe) {
 		this.maThe = maThe;
@@ -30,16 +34,16 @@ public class DocGia {
 	public void setHoTen(String hoTen) {
 		this.hoTen = hoTen;
 	}
-	public Date getNgayCap() {
+	public String getNgayCap() {
 		return ngayCap;
 	}
-	public void setNgayCap(Date ngayCap) {
+	public void setNgayCap(String ngayCap) {
 		this.ngayCap = ngayCap;
 	}
-	public Date getNgayHetHan() {
+	public String getNgayHetHan() {
 		return ngayHetHan;
 	}
-	public void setNgayHetHan(Date ngayHetHan) {
+	public void setNgayHetHan(String ngayHetHan) {
 		this.ngayHetHan = ngayHetHan;
 	}
 	public String getDiaChi() {

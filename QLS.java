@@ -57,6 +57,19 @@ public class QLS {
 		}
 	}
 	
+	public void checkSL ( String tenS , int maS) {
+		for(Sach i : QLS) {
+			if((i.getTenSach().indexOf(tenS)>=0 || i.getMaSach() == maS) && i.getSoLuong() < 0) {
+				System.out.println("Không còn sách");
+			}
+			if(i.getTenSach().indexOf(tenS)<0 || i.getMaSach() != maS) {
+				System.out.println("Không tìm thấy sách");
+			}
+			else
+				System.out.println("Còn sách");
+		}
+	}
+	
 	public void xoaSach(Sach s) {
 		QLS.remove(s);
 	}

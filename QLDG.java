@@ -39,6 +39,14 @@ public class QLDG {
 		return false;
 	}
 	
+	public void timDG(String tenDG, int maThe) {
+		for (DocGia dg : QLDG ) {
+			if(dg.getHoTen().indexOf(tenDG)>=0 || dg.getMaThe() == maThe ) {
+				System.out.println(dg.getNgayCap()+dg.getNgayHetHan());
+			}
+		}
+	}
+	
 	public void showAll() {
 		for (DocGia i : QLDG) {
 			i.toString();

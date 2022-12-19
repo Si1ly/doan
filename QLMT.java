@@ -22,14 +22,18 @@ public class QLMT {
 		QLMT.add(mt);
 	}
 	
-	public void xoaMT(MuonTra mt) {
-		QLMT.remove(mt);
+	public void xoaMT(int maThe, int maSM, String tenSM, String tenDGM) {
+		for (MuonTra mt : QLMT ) {
+			if(mt.getmaThe() == maThe || mt.getMaSachmuon() == maSM || mt.getTenSachmuon().indexOf(tenSM) >= 0 || mt.getTenDocgiamuon().indexOf(tenDGM) >= 0 ) {
+				QLMT.remove(mt);
+			}
+		}
 	}
 	
-	public void timMT(int maDGM, int maSM, String tenSM ) {
-		for (MuonTra i : QLMT ) {
-			if(i.getMaDocgiamuon() == maDGM || i.getMaSachmuon() == maSM || i.getTenSachmuon().indexOf(tenSM) >= 0 ) {
-				System.out.println(i);
+	public void timMT(int maThe, int maSM, String tenSM, String tenDGM ) {
+		for (MuonTra mt : QLMT ) {
+			if(mt.getmaThe() == maThe || mt.getMaSachmuon() == maSM || mt.getTenSachmuon().indexOf(tenSM) >= 0 || mt.getTenDocgiamuon().indexOf(tenDGM) >= 0 ) {
+				System.out.println(mt);
 			}
 		}
 	}
@@ -37,6 +41,14 @@ public class QLMT {
 	public void showAll() {
 		for (MuonTra i : QLMT) {
 			i.toString();
+		}
+	}
+	
+	public void get_ngayDinhTra(int maThe, int maSM, String tenSM, String tenDGM) {
+		for (MuonTra mt : QLMT ) {
+			if(mt.getmaThe() == maThe || mt.getMaSachmuon() == maSM || mt.getTenSachmuon().indexOf(tenSM) >= 0 || mt.getTenDocgiamuon().indexOf(tenDGM) >= 0 ) {
+				System.out.println(mt.getNgayTra());
+			}
 		}
 	}
 	
